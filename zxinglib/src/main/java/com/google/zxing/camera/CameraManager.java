@@ -259,8 +259,9 @@ public final class CameraManager {
 				return null;
 			}
 
-			int width = findDesiredDimensionInRange(screenResolution.x,
-					MIN_FRAME_WIDTH, MAX_FRAME_WIDTH);
+//			int width = findDesiredDimensionInRange(screenResolution.x,
+//					MIN_FRAME_WIDTH, MAX_FRAME_WIDTH);
+			int width = dip2px(context, 233.0f);
 			// 将扫描框设置成一个正方形
 			int height = width;
 
@@ -268,7 +269,7 @@ public final class CameraManager {
 //			int topOffset = (screenResolution.y - height) / 2;
 
 			int leftOffset = (screenResolution.x - width) / 2;
-			int topOffset = dip2px(context, 163);
+			int topOffset = dip2px(context, 139.0f);
 
 			framingRect = new Rect(leftOffset, topOffset, leftOffset + width,
 					topOffset + height);

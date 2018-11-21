@@ -28,4 +28,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     //compile 'com.github.open-android:Zxing:v1.0.3'
     compile project(':zxinglib')
+    //compile 'com.github.wyhusky:Zxing:v1.0.4'
 }
