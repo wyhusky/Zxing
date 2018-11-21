@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQ_CODE) {
+        if (requestCode == REQ_CODE && data != null) {
             mImage.setVisibility(View.GONE);
             mTvResult.setVisibility(View.VISIBLE);
             mImageCallback.setVisibility(View.VISIBLE);

@@ -184,6 +184,8 @@ public final class CaptureActivity extends Activity implements
 
         findViewById(R.id.capture_flashlight).setOnClickListener(this);
 
+        // return image
+        findViewById(R.id.back_img).setOnClickListener(this);
     }
 
     @Override
@@ -522,9 +524,9 @@ public final class CaptureActivity extends Activity implements
                 cameraManager.setTorch(true); // 打开闪光灯
                 isFlashlightOpen = true;
             }
+        } else if (v.getId() == R.id.back_img) {
+            finish();
         }
-
-
     }
 
     private void setCaptureResult(String result){

@@ -100,9 +100,9 @@ public final class ViewfinderView extends View {
     public ViewfinderView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        CORNER_PADDING = dip2px(context, 0.0F);
-        MIDDLE_LINE_PADDING = dip2px(context, 20.0F);
-        MIDDLE_LINE_WIDTH = dip2px(context, 3.0F);
+        CORNER_PADDING = dip2px(context, -11.0F);
+        MIDDLE_LINE_PADDING = dip2px(context, 0.0F);
+        MIDDLE_LINE_WIDTH = dip2px(context, 150.0F);
 
         paint = new Paint(Paint.ANTI_ALIAS_FLAG); // 开启反锯齿
 
@@ -186,14 +186,14 @@ public final class ViewfinderView extends View {
         // 初始化中间线滑动的最上边和最下边
         if (isFirst) {
             isFirst = false;
-            slideTop = frame.top;
+            slideTop = frame.top - MIDDLE_LINE_WIDTH;
             slideBottom = frame.bottom;
         }
 
         // 绘制中间的线,每次刷新界面，中间的线往下移动SPEEN_DISTANCE
         slideTop += SPEEN_DISTANCE;
         if (slideTop >= slideBottom) {
-            slideTop = frame.top;
+            slideTop = frame.top - MIDDLE_LINE_WIDTH;
         }
 
         // 从图片资源画扫描线
@@ -202,6 +202,12 @@ public final class ViewfinderView extends View {
         lineRect.right = frame.right - MIDDLE_LINE_PADDING;
         lineRect.top = slideTop;
         lineRect.bottom = (slideTop + MIDDLE_LINE_WIDTH);
+        Rect clipRect = new Rect();
+        clipRect.left = frame.left;
+        clipRect.right = frame.right;
+        clipRect.top = frame.top;
+        clipRect.bottom = frame.bottom;
+        canvas.clipRect(clipRect);
         canvas.drawBitmap(((BitmapDrawable) getResources()
                         .getDrawable(R.drawable.scan_laser)).getBitmap(), null,
                 lineRect, paint);

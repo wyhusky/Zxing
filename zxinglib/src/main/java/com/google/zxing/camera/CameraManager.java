@@ -264,8 +264,12 @@ public final class CameraManager {
 			// 将扫描框设置成一个正方形
 			int height = width;
 
+//			int leftOffset = (screenResolution.x - width) / 2;
+//			int topOffset = (screenResolution.y - height) / 2;
+
 			int leftOffset = (screenResolution.x - width) / 2;
-			int topOffset = (screenResolution.y - height) / 2;
+			int topOffset = dip2px(context, 163);
+
 			framingRect = new Rect(leftOffset, topOffset, leftOffset + width,
 					topOffset + height);
 
@@ -273,6 +277,18 @@ public final class CameraManager {
 		}
 
 		return framingRect;
+	}
+
+	/**
+	 * dp转px
+	 *
+	 * @param context
+	 * @param dipValue
+	 * @return
+	 */
+	public int dip2px(Context context, float dipValue) {
+		final float scale = context.getResources().getDisplayMetrics().density;
+		return (int) (dipValue * scale + 0.5f);
 	}
 
 	/**
