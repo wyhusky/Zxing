@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.open-android'
+group='com.github.wyhusky'
 
 android {
     compileSdkVersion 25
