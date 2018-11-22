@@ -75,7 +75,7 @@
                     android:id="@+id/capture_flashlight"
                     android:layout_width="49dip"
                     android:layout_height="57dip"
-                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="101dp"
                     android:clickable="true"
                     android:scaleType="fitCenter"
                     android:src="@drawable/scan_flashlight" />
@@ -94,7 +94,7 @@
                     android:id="@+id/capture_scan_photo"
                     android:layout_width="49dip"
                     android:layout_height="57dip"
-                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="101dp"
                     android:clickable="true"
                     android:scaleType="fitCenter"
                     android:src="@drawable/scan_photo" />
