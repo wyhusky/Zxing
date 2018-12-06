@@ -47,8 +47,8 @@
         <TextView
             android:id="@+id/capture_top_hint"
             android:layout_below="@id/nav_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="20dip"
+            android:layout_width="182dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="363dp"
             android:layout_centerHorizontal="true"
             android:gravity="center"
