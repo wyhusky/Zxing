@@ -1,15 +1,23 @@
 package com.google.zxing.activity;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.LocaleList;
 import android.os.Message;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.SurfaceHolder;
@@ -38,6 +46,7 @@ import com.google.zxing.view.ViewfinderView;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.Collection;
+import java.util.Locale;
 import java.util.Map;
 
 
@@ -536,4 +545,41 @@ public final class CaptureActivity extends Activity implements
         finish();
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(updateResources(newBase));
+    }
+
+    private Context updateResources(Context context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Resources resources = context.getResources();
+            // getSetLocale方法是获取新设置的语言
+            Locale locale = getUserLocale(context);
+
+            Configuration configuration = resources.getConfiguration();
+            configuration.setLocale(locale);
+            configuration.setLocales(new LocaleList(locale));
+            return context.createConfigurationContext(configuration);
+        } else {
+            return context;
+        }
+    }
+
+    private Locale getUserLocale(Context context) {
+        String defLanguage = Locale.getDefault().toString();
+        SharedPreferences sp = context.getSharedPreferences("sp_uchain", Context.MODE_PRIVATE);
+        String spLanguage = sp.getString("currentLanguage", defLanguage);
+
+        if (TextUtils.isEmpty(spLanguage)) {
+            return Locale.ENGLISH;
+        }
+
+        if (spLanguage.contains(Locale.CHINA.toString())) {
+            return Locale.SIMPLIFIED_CHINESE;
+        } else if (spLanguage.contains(Locale.ENGLISH.toString())) {
+            return Locale.US;
+        } else {
+            return Locale.getDefault();
+        }
+    }
 }
