@@ -87,6 +87,17 @@
                     android:clickable="true"
                     android:scaleType="fitCenter"
                     android:src="@drawable/scan_flashlight" />
+
+                <TextView
+                    android:layout_width="49dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center"
+                    android:text="@string/light"
+                    android:textColor="#FFFFFF"
+                    android:textSize="11sp"/>
             </LinearLayout>
 
 
@@ -105,6 +116,17 @@
                     android:clickable="true"
                     android:scaleType="fitCenter"
                     android:src="@drawable/scan_photo" />
+
+                <TextView
+                    android:layout_width="49dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center"
+                    android:text="@string/album"
+                    android:textColor="#FFFFFF"
+                    android:textSize="11sp"/>
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

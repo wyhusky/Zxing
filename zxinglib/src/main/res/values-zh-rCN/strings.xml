@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="top_hint">将二维码对准框内，立即扫描</string>
+    <string name="light">灯光</string>
+    <string name="album">相册</string>
 </resources>
