@@ -6,9 +6,9 @@
     <string name="create">生成</string>
     <string name="scan_failed">扫描失败</string>
     <string name="bottom_hint">建议与镜头保持10CM距离，尽量避免逆光和阴影</string>
-    <string name="top_hint">Align the qr code into the frame and scan it immediately</string>
-    <string name="light">light</string>
-    <string name="album">album</string>
+    <string name="top_hint">Align the qr code into\n the frame and scan it\n immediately</string>
+    <string name="light">Light</string>
+    <string name="album">Album</string>
     <string name="cancel">取消</string>
     <string name="msg_camera_framework_bug">抱歉，Android相机出现问题。您可能需要重启设备。</string>
     <string name="button_ok">确定</string>

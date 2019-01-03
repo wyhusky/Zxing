@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="top_hint">Align the qr code into the frame and scan it immediately</string>
-    <string name="light">light</string>
-    <string name="album">album</string>
+    <string name="top_hint">Align the qr code into\n the frame and scan it\n immediately</string>
+    <string name="light">Light</string>
+    <string name="album">Album</string>
 </resources>
