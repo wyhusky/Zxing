@@ -3,4 +3,7 @@
     <string name="top_hint">Align the qr code into\n the frame and scan it\n immediately</string>
     <string name="light">Light</string>
     <string name="album">Album</string>
+    <string name="cancel">cancel</string>
+    <string name="button_ok">confirm</string>
+    <string name="msg_camera_framework_bug">Please allow UWallet to access your phone\'s camera in your phone\'s settings-app permissions-camera.</string>
 </resources>

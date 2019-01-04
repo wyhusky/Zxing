@@ -3,6 +3,10 @@ package com.google.zxing.activity;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.DialogFragment;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -41,6 +45,7 @@ import com.google.zxing.common.IntentSource;
 import com.google.zxing.decode.BitmapDecoder;
 import com.google.zxing.decode.CaptureActivityHandler;
 import com.google.zxing.decode.FinishListener;
+import com.google.zxing.view.PermissionDialogFragment;
 import com.google.zxing.view.ViewfinderView;
 
 import java.io.IOException;
@@ -508,12 +513,16 @@ public final class CaptureActivity extends Activity implements
     }
 
     private void displayFrameworkBugMessageAndExit() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(getString(R.string.app_name));
-        builder.setMessage(getString(R.string.msg_camera_framework_bug));
-        builder.setPositiveButton(R.string.button_ok, new FinishListener(this));
-        builder.setOnCancelListener(new FinishListener(this));
-        builder.show();
+        DialogFragment dialogFragment = PermissionDialogFragment.newInstance();
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        Fragment prev = fm.findFragmentByTag("permissionDialog");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+
+        dialogFragment.show(ft, "permissionDialog");
     }
 
     @Override

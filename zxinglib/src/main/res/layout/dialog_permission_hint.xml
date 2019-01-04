@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="257dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradient_dialog_pwd_bg">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/app_name"
+        android:textColor="@color/c_030303"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="@string/msg_camera_framework_bug"
+        android:textColor="@color/c_030303"
+        android:textSize="12sp" />
+
+    <View
+        android:id="@+id/decor_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tv_msg"
+        android:background="@color/c_DDDDDD" />
+
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_below="@+id/decor_view"
+        android:background="@null"
+        android:gravity="center"
+        android:text="@string/button_ok"
+        android:textAllCaps="false"
+        android:textColor="#007AFF"
+        android:textSize="12sp" />
+
+</RelativeLayout>

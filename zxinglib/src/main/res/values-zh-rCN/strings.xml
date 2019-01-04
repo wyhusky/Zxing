@@ -3,4 +3,7 @@
     <string name="top_hint">将二维码对准框内，立即扫描</string>
     <string name="light">灯光</string>
     <string name="album">相册</string>
+    <string name="cancel">取消</string>
+    <string name="button_ok">确定</string>
+    <string name="msg_camera_framework_bug">请在手机的设置-应用权限-相机中允许UWallet访问你的手机相机。</string>
 </resources>
